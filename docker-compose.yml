@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  demo:
+    build:
+      context: ./demo
+      dockerfile: ./Dockerfile
+    container_name: demo
+    volumes:
+      - ./demo:/app
+    working_dir: /app
+    tty: true
+    ports:
+      - 9090:9090
+
+  externalapi:
+    build:
+      context: ./externalapi
+      dockerfile: ./Dockerfile
+    container_name: externalapi
+    volumes:
+      - ./externalapi:/app
+    working_dir: /app
+    tty: true
+    ports:
+      - 9091:9091
