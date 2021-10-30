@@ -30,6 +30,7 @@ curl http://localhost:9090/demo
 ```
 
 `-e wall` option **must** be used to sample regardless of thread state (on-CPU or off-CPU).
+
 `-t` option should be used to avoid confusing off-CPU and on-CPU comparisons.
 
 ```shell
