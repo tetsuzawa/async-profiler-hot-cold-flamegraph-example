@@ -33,7 +33,7 @@ curl http://localhost:9090/demo
 
 ```shell
 docker-compose exec demo bash
-/var/lib/async-profiler/profiler.sh -e wall,alloc,lock -d 60 -t -i 1ms  -o jfr -f "/tmp/demo.jfr"  $(pgrep -nx java)
+/var/lib/async-profiler/profiler.sh -e wall,alloc,lock -d 60 -t -i 1ms -o jfr -f "demo.jfr" $(pgrep -nx java)
 ```
 
 3. Convert .jfr to .html
