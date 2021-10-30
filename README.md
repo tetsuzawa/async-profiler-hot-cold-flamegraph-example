@@ -29,14 +29,14 @@ curl http://localhost:9090/demo
 # (optional) use ab command instead of curl
 ```
 
-`-e wall` option **must** be used to sample regardless of thread state (on-CPU or off-CPU).
-
-`-t` option should be used to avoid confusing off-CPU and on-CPU comparisons.
-
 ```shell
 docker-compose exec demo bash
 /var/lib/async-profiler/profiler.sh -e wall,alloc,lock -d 60 -t -i 1ms -o jfr -f "demo.jfr" $(pgrep -nx java)
 ```
+
+`-e wall` option **must** be used to sample regardless of thread state (on-CPU or off-CPU).
+
+`-t` option should be used to avoid confusing off-CPU and on-CPU comparisons.
 
 3. Convert .jfr to .html
 
